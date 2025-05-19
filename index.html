@@ -4,31 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Factura</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <div>
       <div class="encabezado">
-        <h1>Sistema de facturazión</h1>
-        <div>
+        <div class="headers">
+            <img src="imagenes/centro.png" alt="">
+            <h1 class="titulo">Centro Acádemico, Psicopedagogico y de Artes </h1>
+        </div>
+        <h1 class="scay">"SCAY"</h1>
+        <div class="headers">
+            <p class="primera-dirección">Sector San José de Morán, Barrio La Esperanza
+            <span class="segunda-dirección">N16-211, Calle las Viñas y las Nueces</span></p>
+        </div>
+        <h1 class="facturacion">Facturación electrónica</h1>
+        <div class="inicio">
           <label>Número de factura:</label>
-          <input type="text" placeholder="Ingrese el número de factura" />
+          <input type="text" placeholder="Ingrese el número de factura" class="nfactra" />
         </div>
-        <div>
+        <div class="inicio">
           <label>Fecha:</label>
-          <input type="date" name="" id="" />
+          <input type="date" name="" id="" class="nFecha"/>
         </div>
-        <h1>Información del cliente</h1>
-        <div>
+        <h1 class="info">Información del cliente</h1>
+        <div class="form">
           <label>Nombre:</label>
-          <input type="text" placeholder="Ingrese el nombre" />
+          <input type="text" placeholder="Ingrese el nombre" class="nNombre"/>
         </div>
-        <div>
-          <label>Dirección:</label>
-          <textarea name="" id="" placeholder="Ingrese su dirección"></textarea>
+        <div class="form">
+          <p>Dirección:</p>
+          <textarea name="" id="" placeholder="Ingrese su dirección" class="nDireccion"></textarea>
         </div>
-        <div>
-          <label>Número de identificación/RUC</label>
-          <input type="text" placeholder="C.i / RUC" />
+        <div class="form">
+          <label>Número de identificación/RUC:</label>
+          <input type="text" placeholder="C.i / RUC" class="nCi"/>
         </div>
         <h1>Formulario</h1>
         <div>
