@@ -1,36 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Factura</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <div class="encabezado">
-            <h1>Sistema de facturazión</h1>
-            <div>
-                <label>Número de factura:</label>
-                <input type="text" placeholder="Ingrese el número de factura">
-            </div>
-            <div>
-                <label>Fecha:</label>
-                <input type="date" name="" id="">
-            </div>
-            <h1>Información del cliente</h1>
-            <div>
-                <label>Nombre:</label>
-                <input type="text" placeholder="Nombre">
-            </div>
-            <div>
-                <label>Dirección:</label>
-                <textarea name="" id="" placeholder="Ingrese su dirección"></textarea>
-            </div>
-            <div>
-                <label>Número de identificación/RUC</label>
-                <input type="text" placeholder="C.i / RUC">
-            </div>
+      <div class="encabezado">
+        <h1>Sistema de facturazión</h1>
+        <div>
+          <label>Número de factura:</label>
+          <input type="text" placeholder="Ingrese el número de factura" />
         </div>
+        <div>
+          <label>Fecha:</label>
+          <input type="date" name="" id="" />
+        </div>
+        <h1>Información del cliente</h1>
+        <div>
+          <label>Nombre:</label>
+          <input type="text" placeholder="Ingrese el nombre" />
+        </div>
+        <div>
+          <label>Dirección:</label>
+          <textarea name="" id="" placeholder="Ingrese su dirección"></textarea>
+        </div>
+        <div>
+          <label>Número de identificación/RUC</label>
+          <input type="text" placeholder="C.i / RUC" />
+        </div>
+        <h1>Formulario</h1>
+        <div>
+          <label for="">Descripción del servicio</label>
+          <input type="text" placeholder="Ingrese el servicio" />
+        </div>
+        <div>
+          <label for="">Precio</label>
+          <input type="text" placeholder="Ingrese el precio" />
+        </div>
+        <div>
+          <button>Agregar</button>
+        </div>
+        <h1>Calculo</h1>
+        <div>
+            <output>Subtotal:</output>
+        </div>
+        <div>
+            <output>Descuento: </output>
+        </div>
+        <div>
+            <output>Total: </output>
+        </div>
+        <div>
+            <button>Guardar Factura</button>
+            <button>Imprimir Factura</button>
+            <button>Limpiar Formulario</button>
+        </div>
+        <h1>Factura</h1>
+        <div>
+          <table border="1px">
+            <tbody>
+              <th>Descripción</th>
+              <th>Precio</th>
+              <th>Total</th>
+              <th>Acciones</th>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
