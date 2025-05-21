@@ -4,78 +4,99 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Factura</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div>
       <div class="encabezado">
         <div class="headers">
-            <img src="imagenes/centro.png" alt="">
-            <h1 class="titulo">Centro Acádemico, Psicopedagogico y de Artes </h1>
+          <img src="imagenes/centro.png" alt="" />
+          <h1 class="titulo">Centro Acádemico, Psicopedagogico y de Artes</h1>
         </div>
         <h1 class="scay">"SCAY"</h1>
         <div class="headers">
-            <p class="primera-dirección">Sector San José de Morán, Barrio La Esperanza
-            <span class="segunda-dirección">N16-211, Calle las Viñas y las Nueces</span></p>
+          <p class="primera-dirección">
+            Sector San José de Morán, Barrio La Esperanza
+            <span class="segunda-dirección"
+              >N16-211, Calle las Viñas y las Nueces</span
+            >
+          </p>
         </div>
         <h1 class="facturacion">Facturación electrónica</h1>
         <div class="inicio">
           <label>Número de factura:</label>
-          <input type="text" placeholder="Ingrese el número de factura" class="nfactra" />
+          <input
+            type="text"
+            placeholder="Ingrese el número de factura"
+            class="nfactra"
+          />
         </div>
         <div class="inicio">
           <label>Fecha:</label>
-          <input type="date" name="" id="" class="nFecha"/>
+          <input type="date" name="" id="" class="nFecha" />
         </div>
         <h1 class="info">Información del cliente</h1>
         <div class="form">
           <label>Nombre:</label>
-          <input type="text" placeholder="Ingrese el nombre" class="nNombre"/>
+          <input type="text" placeholder="Ingrese el nombre" class="nNombre" />
         </div>
         <div class="form">
           <p>Dirección:</p>
-          <textarea name="" id="" placeholder="Ingrese su dirección" class="nDireccion"></textarea>
+          <textarea
+            name=""
+            id=""
+            placeholder="Ingrese su dirección"
+            class="nDireccion"
+          ></textarea>
         </div>
         <div class="form">
           <label>Número de identificación/RUC:</label>
-          <input type="text" placeholder="C.i / RUC" class="nCi"/>
+          <input type="text" placeholder="C.i / RUC" class="nCi" />
         </div>
-        <h1>Formulario</h1>
-        <div>
-          <label for="">Descripción del servicio</label>
-          <input type="text" placeholder="Ingrese el servicio" />
+        <!-- <h1>Formulario</h1> -->
+        <div class="serviciosF">
+          <label for="">Descripción del servicio:</label>
+          <input
+            type="text"
+            placeholder="Ingrese el servicio"
+            class="nService"
+          />
         </div>
-        <div>
-          <label for="">Precio</label>
-          <input type="text" placeholder="Ingrese el precio" />
+        <div class="serviciosF">
+          <label for="">Precio:</label>
+          <input type="text" placeholder="Ingrese el precio" class="nPrecio" />
         </div>
-        <div>
-          <button>Agregar</button>
+        <div class="serviciosF">
+          <button class="btnAgregar">Agregar</button>
         </div>
-        <h1>Calculo</h1>
-        <div>
-            <output>Subtotal:</output>
+        <!-- <h1>Calculo</h1> -->
+        <div class="Calc">
+          <output>Subtotal:</output>
         </div>
-        <div>
-            <output>Descuento: </output>
+        <div class="Calc">
+          <output>Descuento: </output>
         </div>
-        <div>
-            <output>Total: </output>
+        <div class="Calc">
+          <output>Total: </output>
         </div>
-        <div>
-            <button>Guardar Factura</button>
-            <button>Imprimir Factura</button>
-            <button>Limpiar Formulario</button>
+        <div class="Calc">
+          <button class="btnGuardar">Guardar Factura</button>
+          <button class="btnImprimir">Imprimir Factura</button>
+          <button class="btnLimpiar">Limpiar Formulario</button>
         </div>
-        <h1>Factura</h1>
+        <h1 class="datos">Datos del cliente</h1>
         <div>
-          <table border="1px">
-            <tbody>
-              <th>Descripción</th>
-              <th>Precio</th>
-              <th>Total</th>
-              <th>Acciones</th>
-            </tbody>
+          <table class="tabla-items">
+            <thead>
+              <tr>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Subtotal</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="cuerpo-tabla-items"></tbody>
           </table>
         </div>
       </div>

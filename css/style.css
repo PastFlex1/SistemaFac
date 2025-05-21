@@ -126,3 +126,143 @@ img{
 .nCi:hover{
     box-shadow: 3px 3px 10px rgb(196, 195, 195);
 }
+
+.serviciosF{
+    position: relative;
+    bottom: 42rem;
+    left: 50rem;
+    margin-bottom: 1rem;
+}
+
+.nService, .nPrecio{
+    border: solid;
+    border-width: 1px;
+    width: 15rem;
+    padding: .5rem;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    transition: box-shadow 0.4s;
+}
+
+.nService:hover{
+    box-shadow: 3px 3px 10px rgb(196, 195, 195);
+}
+
+.nPrecio:hover{
+    box-shadow: 3px 3px 10px rgb(196, 195, 195);
+}
+
+.btnAgregar{
+    border: solid;
+    border-width: 1px;
+    padding: .6rem 1.5rem;
+    border-color: rgb(190, 189, 187);
+    background-color: rgb(190, 189, 187);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.btnAgregar:hover{
+    background-color: white;
+    color: rgb(190, 189, 187);
+}
+
+.btnAgregar:active{
+    opacity: 0.3;
+}
+
+.Calc{
+    position: relative;
+    bottom: 42rem;
+    left: 50rem;
+    margin-bottom: 1rem;
+}
+
+.btnGuardar,.btnImprimir,.btnLimpiar{
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    border: solid;
+    border-width: 1px;
+}
+
+.btnGuardar{
+    background-color: rgb(104, 210, 24);
+    border-color: green;
+    color: white;
+    transition: 0.4s;
+}
+
+.btnImprimir{
+    background-color: rgb(206, 137, 41);
+    color: white;
+    border-color: brown;
+    transition: 0.4s;
+}
+
+.btnLimpiar{
+    background-color: rgb(255, 2, 2);
+    color: white;
+    border-color: rgb(115, 0, 0);
+    transition: 0.4s;
+}
+
+
+.btnGuardar:hover{
+    background-color: white;
+    color: rgb(104, 210, 24);
+}
+
+.btnImprimir:hover{
+    background-color: white;
+    color: rgb(206, 137, 41);
+}
+
+.btnLimpiar:hover{
+    background-color: white;
+    color:rgb(255, 2, 2);
+}
+
+.datos{
+    position: relative;
+    bottom: 36rem;
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+tabla-items {
+    width: 100%;
+    border-collapse: collapse; /* Eliminar el espacio entre bordes de celdas */
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tabla-items thead th {
+    background-color: #7b7b7b; /* Azul para el encabezado */
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #0056b3;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 35rem;
+    left: 25rem;
+}
+
+.tabla-items tbody td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd; /* Líneas divisorias sutiles */
+    vertical-align: middle; /* Alinear contenido al centro verticalmente */
+}
+
+.tabla-items tbody tr:nth-child(even) {
+    background-color: #f8f8f8; /* Un ligero sombreado en filas pares */
+}
+
+.tabla-items tbody tr:hover {
+    background-color: #eef7ff; /* Resaltar fila al pasar el mouse */
+}
+
