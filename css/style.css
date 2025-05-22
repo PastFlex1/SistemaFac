@@ -1,268 +1,540 @@
-*{
-    font-family: sans-serif;
-    background-color: rgb(242, 242, 242);
+/* RESET BÁSICO Y ESTILOS GLOBALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Muy importante para que el padding no afecte el ancho */
 }
 
-
-.headers{
-    display: inline-block;
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(242, 242, 242); /* Color de fondo general del cuerpo */
+    color: #333;
+    line-height: 1.6;
 }
-img{
+
+.factura-wrapper {
+    max-width: 1000px; /* Un ancho máximo para todo el contenido de la factura */
+    margin: 30px auto; /* Centrar el contenedor en la página */
+    background-color: #fff; /* Fondo blanco para la "hoja" de la factura */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------------- */
+/* ESTILOS DEL ENCABEZADO DE LA FACTURA */
+/* ------------------------------------- */
+.factura-header {
+    display: flex; /* Usa Flexbox para alinear elementos */
+    justify-content: space-between; /* Espacio entre el logo/título y la dirección */
+    align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Permite que los elementos salten de línea en pantallas pequeñas */
+    gap: 20px; /* Espacio entre los elementos flexibles */
+}
+
+.empresa-info {
+    display: flex;
+    align-items: center; /* Alinea logo y texto al centro verticalmente */
+    gap: 15px; /* Espacio entre el logo y el texto */
+}
+
+.logo {
     width: 10rem;
+    height: auto; /* Mantiene la proporción de la imagen */
     border-radius: 1rem;
-    margin-left: 5rem;
 }
 
-.titulo{
-    position: relative;
-    bottom: 10rem;
-    left: 16rem;
+.titulo-empresa {
+    font-size: 1.8em; /* Ajustado para mejor legibilidad */
+    color: #333;
+    margin-bottom: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Usando tu fuente original */
 }
 
-.scay{
-    position: relative;
-    bottom: 13rem;
-    left: 16rem;
+.nombre-corto-empresa {
+    font-size: 2.5em; /* Un poco más grande para destacar */
     font-weight: 800;
-    font-size: 3rem;
+    color: #000;
+    margin-top: 0;
 }
 
-.primera-dirección{
-    position: relative;
-    bottom: 22.2rem;
-    left: 67rem;   
+.empresa-direccion {
+    text-align: right; /* Alinea la dirección a la derecha */
+    font-size: 0.95em;
+    color: #555;
 }
 
-.segunda-dirección{
-    position: relative;
-    top: 1.5rem;
-    right: 17.2rem;
+.empresa-direccion p {
+    margin: 0; /* Eliminar márgenes por defecto de los párrafos */
 }
 
-.facturacion{
-    position: relative;
+.titulo-facturacion {
     text-align: center;
-    bottom: 18rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 30px;
+    color: #007bff; /* Color principal de la factura */
+    font-size: 2em;
+    text-transform: uppercase;
 }
 
-.inicio{
-    position: relative;
-    bottom: 18rem;
-    left: 5rem;
-    margin-bottom: 1rem;
-}
-.nfactra{
-    border: solid;
-    border-width: 1px;
-    width: 15rem;
-    padding: .5rem;
-    border-radius: 5px;
-    color: rgb(0, 0, 0);
-    transition: box-shadow 0.4s;
+
+/* ------------------------------------- */
+/* ESTILOS DE SECCIONES (DATOS, CLIENTE, AGREGAR ITEM) */
+/* ------------------------------------- */
+.seccion-datos-factura,
+.seccion-info-cliente,
+.seccion-agregar-item,
+.seccion-totales,
+.seccion-botones-accion {
+    margin-bottom: 25px; /* Espacio entre secciones */
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background-color: #fcfcfc;
 }
 
-.nfactra:hover{
-    box-shadow: 3px 3px 10px rgb(196, 195, 195);
-    
+.seccion-datos-factura {
+    display: flex;
+    justify-content: space-between; /* Espacia los campos de fecha y número */
+    flex-wrap: wrap; /* Para que salten de línea en móviles */
+    gap: 20px;
 }
 
-.nFecha{
-    border: solid;
-    border-width: 1px;
-    width: 7rem;
-    padding: .5rem;
-    border-radius: 5px;
-    color: grey;
-    background-color: rgb(232, 230, 230);
-    transition: box-shadow 0.4s;
-}
-
-.nFecha:hover{
-    box-shadow: 3px 3px 10px rgb(196, 195, 195);
-}
-
-.info{
-    position: relative;
-    bottom: 18rem;
-    left: 5rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.form{
-    position: relative;
-    bottom: 18rem;
-    left: 5rem;
-    margin-bottom: 1rem;
-}
-
-.nNombre, .nCi{
-    border: solid;
-    border-width: 1px;
-    width: 15rem;
-    padding: .5rem;
-    border-radius: 5px;
-    color: rgb(0, 0, 0);
-    transition: box-shadow 0.4s;
-}
-
-.nNombre:hover{
-    box-shadow: 3px 3px 10px rgb(196, 195, 195);
-}
-
-.nDireccion{
-    padding: 1rem 6rem;
+.seccion-info-cliente h2,
+.seccion-agregar-item h2 {
+    color: #0056b3;
+    margin-bottom: 20px;
+    font-size: 1.5em;
     text-align: center;
-    border: solid;
-    border-width: 1px;
-    border-radius: 5px;
-    transition: box-shadow 0.4s;
 }
 
-.nDireccion:hover{
-    box-shadow: 3px 3px 10px rgb(196, 195, 195);
+.campo-factura,
+.campo-cliente,
+.campo-item {
+    display: flex;
+    flex-direction: column; /* Apila etiqueta y input verticalmente */
+    margin-bottom: 15px; /* Espacio entre campos */
 }
 
-.nCi:hover{
-    box-shadow: 3px 3px 10px rgb(196, 195, 195);
+.campo-cliente {
+    flex-basis: calc(50% - 10px); /* Dos columnas en clientes */
 }
 
-.serviciosF{
-    position: relative;
-    bottom: 42rem;
-    left: 50rem;
-    margin-bottom: 1rem;
+.seccion-info-cliente {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los campos del cliente */
 }
 
-.nService, .nPrecio{
-    border: solid;
-    border-width: 1px;
-    width: 15rem;
-    padding: .5rem;
-    border-radius: 5px;
-    color: rgb(0, 0, 0);
-    transition: box-shadow 0.4s;
-}
-
-.nService:hover{
-    box-shadow: 3px 3px 10px rgb(196, 195, 195);
-}
-
-.nPrecio:hover{
-    box-shadow: 3px 3px 10px rgb(196, 195, 195);
-}
-
-.btnAgregar{
-    border: solid;
-    border-width: 1px;
-    padding: .6rem 1.5rem;
-    border-color: rgb(190, 189, 187);
-    background-color: rgb(190, 189, 187);
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-radius: 5px;
-    transition: 0.4s;
-}
-
-.btnAgregar:hover{
-    background-color: white;
-    color: rgb(190, 189, 187);
-}
-
-.btnAgregar:active{
-    opacity: 0.3;
-}
-
-.Calc{
-    position: relative;
-    bottom: 42rem;
-    left: 50rem;
-    margin-bottom: 1rem;
-}
-
-.btnGuardar,.btnImprimir,.btnLimpiar{
-    border-radius: 5px;
-    padding: .5rem 1rem;
-    border: solid;
-    border-width: 1px;
-}
-
-.btnGuardar{
-    background-color: rgb(104, 210, 24);
-    border-color: green;
-    color: white;
-    transition: 0.4s;
-}
-
-.btnImprimir{
-    background-color: rgb(206, 137, 41);
-    color: white;
-    border-color: brown;
-    transition: 0.4s;
-}
-
-.btnLimpiar{
-    background-color: rgb(255, 2, 2);
-    color: white;
-    border-color: rgb(115, 0, 0);
-    transition: 0.4s;
-}
-
-
-.btnGuardar:hover{
-    background-color: white;
-    color: rgb(104, 210, 24);
-}
-
-.btnImprimir:hover{
-    background-color: white;
-    color: rgb(206, 137, 41);
-}
-
-.btnLimpiar:hover{
-    background-color: white;
-    color:rgb(255, 2, 2);
-}
-
-.datos{
-    position: relative;
-    bottom: 36rem;
-    text-align: center;
+label {
     font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 8px;
+    color: #555;
 }
 
-tabla-items {
+/* Estilos para inputs generales */
+.input-factura,
+.input-cliente,
+.input-item {
+    border: 1px solid #ccc;
+    padding: 0.8em;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.input-factura:hover,
+.input-cliente:hover,
+.input-item:hover {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* Sombra azul al pasar el mouse */
+    border-color: #007bff;
+}
+.input-factura:focus,
+.input-cliente:focus,
+.input-item:focus {
+    outline: none; /* Eliminar el contorno por defecto */
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.textarea-cliente {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 80px;
+}
+
+/* Estilos de los botones de acción */
+.btn-accion {
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease;
+    text-transform: uppercase;
+}
+
+.btn-accion:hover {
+    transform: translateY(-2px); /* Pequeño efecto al pasar el mouse */
+}
+
+.btn-accion:active {
+    transform: translateY(0); /* Efecto de "presionado" */
+    opacity: 0.9;
+}
+
+/* Botones específicos */
+.btn-agregar {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+.btn-agregar:hover {
+    background-color: #218838;
+}
+
+.btn-guardar {
+    background-color: #17a2b8; /* Cyan */
+    color: white;
+}
+.btn-guardar:hover {
+    background-color: #138496;
+}
+
+.btn-imprimir {
+    background-color: #007bff; /* Azul */
+    color: white;
+}
+.btn-imprimir:hover {
+    background-color: #0056b3;
+}
+
+.btn-limpiar {
+    background-color: #dc3545; /* Rojo */
+    color: white;
+}
+.btn-limpiar:hover {
+    background-color: #c82333;
+}
+
+/* Estilos para los botones dentro de la tabla (Editar/Eliminar) */
+.tabla-items .btn-accion { /* Más específico para evitar conflicto */
+    padding: 6px 10px;
+    font-size: 0.75em;
+    margin: 0 2px;
+}
+.tabla-items .btn-eliminar {
+    background-color: #dc3545;
+    color: white;
+}
+.tabla-items .btn-eliminar:hover {
+    background-color: #c82333;
+}
+
+
+/* ------------------------------------- */
+/* ESTILOS DE LA TABLA DE ÍTEMS (CORREGIDO) */
+/* ------------------------------------- */
+.seccion-tabla-items h2 {
+    color: #0056b3;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.tabla-items {
     width: 100%;
-    border-collapse: collapse; /* Eliminar el espacio entre bordes de celdas */
+    border-collapse: collapse;
     margin-bottom: 30px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px; /* Bordes redondeados para la tabla */
+    overflow: hidden; /* Importante para que los bordes redondeados se vean bien */
 }
 
 .tabla-items thead th {
-    background-color: #7b7b7b; /* Azul para el encabezado */
+    background-color: #6c757d; /* Un gris oscuro, más neutral y profesional */
     color: white;
     padding: 12px 15px;
     text-align: left;
-    border-bottom: 2px solid #0056b3;
+    border-bottom: 2px solid #545b62; /* Borde más oscuro */
     font-weight: bold;
     text-transform: uppercase;
-    position: relative;
-    bottom: 35rem;
-    left: 25rem;
+    /* QUITADO: position: relative, bottom, left. La tabla se posiciona en el flujo normal */
 }
 
 .tabla-items tbody td {
     padding: 10px 15px;
-    border-bottom: 1px solid #ddd; /* Líneas divisorias sutiles */
-    vertical-align: middle; /* Alinear contenido al centro verticalmente */
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
 }
 
 .tabla-items tbody tr:nth-child(even) {
-    background-color: #f8f8f8; /* Un ligero sombreado en filas pares */
+    background-color: #f8f8f8;
 }
 
 .tabla-items tbody tr:hover {
-    background-color: #eef7ff; /* Resaltar fila al pasar el mouse */
+    background-color: #eef7ff;
 }
 
+
+/* ------------------------------------- */
+/* ESTILOS DE LA SECCIÓN DE TOTALES */
+/* ------------------------------------- */
+.seccion-totales {
+    max-width: 400px; /* Limitar el ancho de la sección de totales */
+    margin-left: auto; /* Mueve la sección a la derecha */
+    background-color: #f0f8ff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.total-line:last-of-type { /* Selecciona el último .total-line */
+    border-bottom: none;
+}
+
+.total-line span, .total-line label {
+    font-size: 1.1em;
+}
+
+.total-line span {
+    font-weight: bold;
+    color: #444;
+}
+
+.total-line label {
+    color: #666;
+}
+
+.total-line input[type="number"] {
+    width: 80px;
+    text-align: right;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.total-final {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #007bff;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #007bff;
+}
+
+/* ------------------------------------- */
+/* ESTILOS DE LA SECCIÓN DE BOTONES DE ACCIÓN */
+/* ------------------------------------- */
+.seccion-botones-accion {
+    text-align: right;
+    padding: 20px 0; /* Padding solo arriba y abajo */
+    border-top: 1px solid #eee;
+    margin-top: 30px;
+    background-color: transparent; /* No tiene un fondo específico aquí */
+    border: none; /* No tiene borde */
+    box-shadow: none; /* No tiene sombra */
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 15px; /* Espacio entre los botones */
+    flex-wrap: wrap; /* Para que se ajusten en móviles */
+}
+
+
+/* ------------------------------------- */
+/* MEDIA QUERIES (RESPONSIVIDAD) */
+/* ------------------------------------- */
+@media (max-width: 768px) {
+    .factura-wrapper {
+        margin: 10px; /* Márgenes más pequeños en móviles */
+        padding: 15px;
+    }
+
+    .factura-header {
+        flex-direction: column; /* Apila el logo/título y la dirección */
+        align-items: center; /* Centra los elementos apilados */
+        text-align: center;
+    }
+
+    .empresa-direccion {
+        text-align: center; /* Centra la dirección en móviles */
+    }
+
+    .empresa-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .titulo-empresa, .nombre-corto-empresa {
+        font-size: 1.4em; /* Ajustar tamaño de fuente */
+    }
+
+    .nombre-corto-empresa {
+        font-size: 2em;
+    }
+
+    .titulo-facturacion {
+        font-size: 1.6em;
+    }
+
+    .seccion-datos-factura {
+        flex-direction: column; /* Apila los campos de factura */
+    }
+
+    .seccion-info-cliente {
+        flex-direction: column; /* Apila los campos de cliente */
+    }
+
+    .seccion-agregar-item {
+        display: flex; /* Mantener flex para los inputs del item */
+        flex-direction: column;
+        align-items: stretch; /* Estirar los inputs */
+    }
+
+    .btn-accion {
+        width: 100%; /* Botones de acción ocupan todo el ancho */
+        margin-bottom: 10px;
+    }
+
+    .seccion-botones-accion {
+        flex-direction: column; /* Apila los botones de acción */
+        align-items: center; /* Centra los botones */
+        gap: 10px;
+    }
+
+    /* ESTILOS DE TABLA RESPONSIVA EN MÓVILES */
+    .tabla-items {
+        border: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .tabla-items thead {
+        display: none; /* Ocultar el encabezado */
+    }
+
+    .tabla-items tbody,
+    .tabla-items tr,
+    .tabla-items td {
+        display: block; /* Convertir a bloques */
+        width: 100%;
+    }
+
+    .tabla-items tr {
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .tabla-items td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-bottom: 1px solid #eee;
+    }
+
+    .tabla-items td:last-child {
+        border-bottom: 0;
+        text-align: center; /* Centrar el botón de eliminar */
+        padding-left: 10px; /* Ajustar padding */
+    }
+
+    .tabla-items td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: calc(50% - 20px);
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .tabla-items td[data-label="Acciones"]::before {
+        content: none; /* Ocultar la etiqueta "Acciones" */
+    }
+
+    /* Opcional: ajustar el tamaño de los inputs de totales en móviles */
+    .seccion-totales {
+        max-width: 100%; /* Que ocupe todo el ancho disponible */
+        margin-left: 0;
+    }
+}
+
+/* Estilos para Impresión */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+        color: #000;
+        -webkit-print-color-adjust: exact; /* Para que los colores de fondo se impriman */
+        print-color-adjust: exact;
+    }
+
+    .factura-wrapper {
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding: 20px; /* Ajustar padding para impresión */
+        max-width: none; /* No limitar ancho para impresión */
+    }
+
+    /* Ocultar elementos no necesarios para la impresión */
+    .seccion-agregar-item,
+    .seccion-botones-accion,
+    .input-factura:hover, .input-cliente:hover, .input-item:hover,
+    .input-factura:focus, .input-cliente:focus, .input-item:focus,
+    .btn-accion,
+    .tabla-items .btn-accion,
+    /* Cualquier otra cosa que solo sea para UI y no para la factura impresa */
+    .seccion-datos-factura .campo-factura input[type="date"]::-webkit-calendar-picker-indicator { /* Ocultar el icono del calendario si molesta */
+        display: none !important;
+    }
+    
+    .seccion-datos-factura .campo-factura input,
+    .seccion-info-cliente .campo-cliente input,
+    .seccion-info-cliente .campo-cliente textarea,
+    .seccion-totales .total-line input {
+        border: none !important; /* Eliminar bordes de inputs en impresión */
+        background-color: transparent !important; /* Fondo transparente */
+        padding: 0 !important; /* Eliminar padding */
+    }
+
+    .tabla-items {
+        box-shadow: none;
+        border: 1px solid #ccc; /* Borde general de tabla para impresión */
+    }
+    .tabla-items thead th {
+        background-color: #e0e0e0 !important; /* Color más claro para imprimir */
+        color: #333 !important;
+        border-bottom: 1px solid #ccc !important;
+    }
+    .tabla-items tbody tr:nth-child(even) {
+        background-color: #f9f9f9 !important;
+    }
+    .tabla-items tbody tr:hover {
+        background-color: #f9f9f9 !important;
+    }
+
+    /* Asegurar que el texto sea legible */
+    h1, h2, h3, p, span, label {
+        color: #000 !important;
+    }
+}

@@ -1,105 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Factura</title>
     <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <div>
-      <div class="encabezado">
-        <div class="headers">
-          <img src="imagenes/centro.png" alt="" />
-          <h1 class="titulo">Centro Acádemico, Psicopedagogico y de Artes</h1>
-        </div>
-        <h1 class="scay">"SCAY"</h1>
-        <div class="headers">
-          <p class="primera-dirección">
-            Sector San José de Morán, Barrio La Esperanza
-            <span class="segunda-dirección"
-              >N16-211, Calle las Viñas y las Nueces</span
-            >
-          </p>
-        </div>
-        <h1 class="facturacion">Facturación electrónica</h1>
-        <div class="inicio">
-          <label>Número de factura:</label>
-          <input
-            type="text"
-            placeholder="Ingrese el número de factura"
-            class="nfactra"
-          />
-        </div>
-        <div class="inicio">
-          <label>Fecha:</label>
-          <input type="date" name="" id="" class="nFecha" />
-        </div>
-        <h1 class="info">Información del cliente</h1>
-        <div class="form">
-          <label>Nombre:</label>
-          <input type="text" placeholder="Ingrese el nombre" class="nNombre" />
-        </div>
-        <div class="form">
-          <p>Dirección:</p>
-          <textarea
-            name=""
-            id=""
-            placeholder="Ingrese su dirección"
-            class="nDireccion"
-          ></textarea>
-        </div>
-        <div class="form">
-          <label>Número de identificación/RUC:</label>
-          <input type="text" placeholder="C.i / RUC" class="nCi" />
-        </div>
-        <!-- <h1>Formulario</h1> -->
-        <div class="serviciosF">
-          <label for="">Descripción del servicio:</label>
-          <input
-            type="text"
-            placeholder="Ingrese el servicio"
-            class="nService"
-          />
-        </div>
-        <div class="serviciosF">
-          <label for="">Precio:</label>
-          <input type="text" placeholder="Ingrese el precio" class="nPrecio" />
-        </div>
-        <div class="serviciosF">
-          <button class="btnAgregar">Agregar</button>
-        </div>
-        <!-- <h1>Calculo</h1> -->
-        <div class="Calc">
-          <output>Subtotal:</output>
-        </div>
-        <div class="Calc">
-          <output>Descuento: </output>
-        </div>
-        <div class="Calc">
-          <output>Total: </output>
-        </div>
-        <div class="Calc">
-          <button class="btnGuardar">Guardar Factura</button>
-          <button class="btnImprimir">Imprimir Factura</button>
-          <button class="btnLimpiar">Limpiar Formulario</button>
-        </div>
-        <h1 class="datos">Datos del cliente</h1>
-        <div>
-          <table class="tabla-items">
-            <thead>
-              <tr>
-                <th>Descripción</th>
-                <th>Cantidad</th>
-                <th>Precio Unitario</th>
-                <th>Subtotal</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody id="cuerpo-tabla-items"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </body>
+</head>
+<body>
+    <div class="factura-wrapper">
+
+        <header class="factura-header">
+            <div class="empresa-info">
+                <img src="imagenes/centro.png" alt="Logo SCAY" class="logo" />
+                <div>
+                    <h1 class="titulo-empresa">Centro Acádemico, Psicopedagógico y de Artes</h1>
+                    <h2 class="nombre-corto-empresa">"SCAY"</h2>
+                </div>
+            </div>
+            <div class="empresa-direccion">
+                <p>Sector San José de Morán, Barrio La Esperanza</p>
+                <p>N16-211, Calle las Viñas y las Nueces</p>
+            </div>
+        </header>
+
+        <h1 class="titulo-facturacion">Facturación Electrónica</h1>
+
+        <section class="seccion-datos-factura">
+            <div class="campo-factura">
+                <label for="numeroFactura">Número de factura:</label>
+                <input type="text" id="numeroFactura" placeholder="Ingrese el número de factura" class="input-factura" />
+            </div>
+            <div class="campo-factura">
+                <label for="fechaFactura">Fecha:</label>
+                <input type="date" id="fechaFactura" class="input-factura" />
+            </div>
+        </section>
+
+        <section class="seccion-info-cliente">
+            <h2>Información del Cliente</h2>
+            <div class="campo-cliente">
+                <label for="nombreCliente">Nombre:</label>
+                <input type="text" id="nombreCliente" placeholder="Ingrese el nombre" class="input-cliente" />
+            </div>
+            <div class="campo-cliente">
+                <label for="direccionCliente">Dirección:</label>
+                <textarea id="direccionCliente" placeholder="Ingrese su dirección" class="input-cliente textarea-cliente"></textarea>
+            </div>
+            <div class="campo-cliente">
+                <label for="identificacionCliente">Número de identificación/RUC:</label>
+                <input type="text" id="identificacionCliente" placeholder="C.i / RUC" class="input-cliente" />
+            </div>
+        </section>
+
+        <section class="seccion-agregar-item">
+            <h2>Agregar Servicio/Producto</h2>
+            <div class="campo-item">
+                <label for="itemDescripcion">Descripción del servicio:</label>
+                <input type="text" id="itemDescripcion" placeholder="Ingrese el servicio" class="input-item" />
+            </div>
+            <div class="campo-item">
+                <label for="itemCantidad">Cantidad:</label>
+                <input type="number" id="itemCantidad" value="1" min="1" class="input-item" />
+            </div>
+            <div class="campo-item">
+                <label for="itemPrecio">Precio:</label>
+                <input type="number" id="itemPrecio" value="0.00" min="0" step="0.01" class="input-item" />
+            </div>
+            <button id="btn-agregar-item" class="btn-accion btn-agregar">Agregar</button>
+        </section>
+
+        <section class="seccion-tabla-items">
+            <h2>Detalle de Servicios</h2>
+            <table class="tabla-items">
+                <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Subtotal</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla-items">
+                    <tr>
+                        <td data-label="Descripción">Nivelación</td>
+                        <td data-label="Cantidad">1</td>
+                        <td data-label="Precio Unitario">$4.00</td>
+                        <td data-label="Subtotal">$4.00</td>
+                        <td data-label="Acciones">
+                            <button class="btn-accion btn-eliminar">X</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="seccion-totales">
+            <div class="total-line">
+                <span>Subtotal:</span>
+                <span id="subtotalFactura">0.00</span>
+            </div>
+            <div class="total-line">
+                <label for="descuentoPorcentaje">Descuento (%):</label>
+                <input type="number" id="descuentoPorcentaje" value="0" min="0" max="100" step="1" class="input-total" />
+                <span id="descuentoValor">0.00</span>
+            </div>
+            <div class="total-line">
+                <label for="impuestoPorcentaje">Impuesto (%):</label>
+                <input type="number" id="impuestoPorcentaje" value="0" min="0" step="0.01" class="input-total" />
+                <span id="impuestoValor">0.00</span>
+            </div>
+            <div class="total-line total-final">
+                <span>TOTAL A PAGAR:</span>
+                <span id="totalFactura">0.00</span>
+            </div>
+        </section>
+
+        <section class="seccion-botones-accion">
+            <button id="btnGuardar" class="btn-accion btn-guardar">Guardar Factura</button>
+            <button id="btnImprimir" class="btn-accion btn-imprimir">Imprimir Factura</button>
+            <button id="btnLimpiar" class="btn-accion btn-limpiar">Limpiar Formulario</button>
+        </section>
+
+    </div> </body>
 </html>
